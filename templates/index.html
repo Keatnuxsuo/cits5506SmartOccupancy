@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Smart Occupancy</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/skeleton.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/layout.css') }}">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+    </head>
+    <body>
+
+
+    <div class="container">
+        <div id="logo" class="sixteen columns">
+            <h3>Smart Occupancy</h3>
+        </div>
+        <div id="nav" class="sixteen columns">
+            <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="h/">Search</a></li>
+            <li><a href="/">Contact</a></li>
+            </ul>
+        </div>
+        <div id="theText" class="eight columns">
+            <h1>Welcome!</h>
+            <h2><b>It is:</b> {{ time }}</h2>
+            <h2><b>Table 1 is</b> {{ Sensor }}</h2> 
+        </div>
+        <div id="bigphoto" class="seven columns add-bottom offset-by-one">
+            <img src="{{ url_for('static',filename='styles/image.jpg') }}" />
+        </div>
+    </div>
+
+    </body>
+</html>
+            
