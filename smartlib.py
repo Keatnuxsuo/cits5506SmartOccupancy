@@ -1,10 +1,10 @@
 from flask import Flask, render_template
 import time
 import datetime
-import RPi.GPIO as GPIO
+import RPIO
 app = Flask(__name__)
 
-GPIO.setmode(GPIO.BCM)
+RPIO.setmode(RPIO.BCM)
 
 a_pin = 18
 b_pin = 23
@@ -27,17 +27,17 @@ def hello():
         return render_template('index.html', **templateData)
 
 def discharge():
-    GPIO.setup(a_pin, GPIO.IN)
-    GPIO.setup(b_pin, GPIO.OUT)
-    GPIO.output(b_pin, False)
+    RPIO.setup(a_pin, RPIO.IN)
+    RPIO.setup(b_pin, RPIO.OUT)
+    RPIO.output(b_pin, False)
     time.sleep(0.005)
 
 def charge_time():
-    GPIO.setup(b_pin, GPIO.IN)
-    GPIO.setup(a_pin, GPIO.OUT)
+    RPIO.setup(b_pin, RPIO.IN)
+    RPIO.setup(a_pin, RPIO.OUT)
     count = 0
-    GPIO.output(a_pin, True)
-    while not GPIO.input(b_pin):
+    RPIO.output(a_pin, True)
+    while not RPIO.input(b_pin):
         count = count + 1
     return count
 
