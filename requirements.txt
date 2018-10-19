@@ -7,5 +7,6 @@ Jinja2==2.10
 MarkupSafe==1.0
 pytz==2018.5
 RPi.GPIO==0.6.3
+RPIO==0.10.1
 Werkzeug==0.14.1
 zope.interface==4.5.0
